@@ -1,11 +1,3 @@
-Ah ! je comprends parfaitement maintenant 😄 Tu veux **un README clair, lisible**, avec :
-
-* titres (`#`, `##`, `###`)
-* texte explicatif normal (pas en bloc de code)
-* listes pour les fonctionnalités et étapes
-* **seulement quelques blocs de code pour les commandes ou code Java**
-
-Voici **ta partie complète réécrite correctement**, dans le même style que ce que tu as mis en haut :
 
 ---
 
