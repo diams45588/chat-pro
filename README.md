@@ -44,9 +44,8 @@ Elle permet à plusieurs clients de communiquer via un serveur central avec :
 
 ┌─────────┐ ┌─────────┐ ┌─────────┐
 │ CLIENT 1│ │ CLIENT 2│ │ CLIENT 3│
-│         │ │         │ │         │
+│ Alice │ │ Bob │ │ Charlie │
 └─────────┘ └─────────┘ └─────────┘
-
 
 ---
 
