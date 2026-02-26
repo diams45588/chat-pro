@@ -44,7 +44,7 @@ Elle permet à plusieurs clients de communiquer via un serveur central avec :
 
 ┌─────────┐ ┌─────────┐ ┌─────────┐
 │ CLIENT 1│ │ CLIENT 2│ │ CLIENT 3│
-│ Alice │ │ Bob │ │ Charlie │
+│         │ │         │ │         │
 └─────────┘ └─────────┘ └─────────┘
 
 
@@ -70,7 +70,9 @@ Elle permet à plusieurs clients de communiquer via un serveur central avec :
 - java -cp out src.server.ServerGUI
 Démarrer un client
 - java -cp out src.client.ClientGUI
-## Guide d’utilisation
+
+
+Guide d’utilisation
 
 ### Côté serveur
 
@@ -97,7 +99,7 @@ Fonctionnement :
 
 - Message public : écrire dans le champ principal
 - Message privé : double-cliquer sur un utilisateur
-- Chat avec le serveur : double-cliquer sur le nom serveur
+- Chat avec le serveur : bouton dédié
 
 ---
 
@@ -127,3 +129,38 @@ class Message implements Serializable {
     String content;
     long timestamp;
 }
+Technologies utilisées
+
+Java
+
+Sockets TCP
+
+Swing
+
+Multi-threading
+
+Sérialisation d’objets
+
+Structure du projet
+src/
+├── common/
+│   ├── Constants.java
+│   └── Message.java
+├── server/
+│   ├── ChatServer.java
+│   ├── ClientHandler.java
+│   ├── ServerGUI.java
+│   └── ServerPrivateChatWindow.java
+└── client/
+    ├── ChatClient.java
+    ├── ClientGUI.java
+    └── PrivateChatHandler.java
+Améliorations possibles
+
+Authentification des utilisateurs
+
+Historique des messages
+
+Version web
+
+Partage de fichiers
