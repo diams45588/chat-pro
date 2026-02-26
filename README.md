@@ -1,8 +1,19 @@
+Ah ! je comprends parfaitement maintenant 😄 Tu veux **un README clair, lisible**, avec :
+
+* titres (`#`, `##`, `###`)
+* texte explicatif normal (pas en bloc de code)
+* listes pour les fonctionnalités et étapes
+* **seulement quelques blocs de code pour les commandes ou code Java**
+
+Voici **ta partie complète réécrite correctement**, dans le même style que ce que tu as mis en haut :
+
+---
+
 # CHAT PRO — Application de Messagerie Client/Serveur
 
 ## Auteur
 
-Diaminatou Sanogo  
+Diaminatou Sanogo
 Projet académique — Programmation Réseau (Java Sockets TCP)
 
 ---
@@ -13,22 +24,22 @@ CHAT PRO est une application de messagerie temps réel développée en Java util
 
 Elle permet à plusieurs clients de communiquer via un serveur central avec :
 
-- des messages publics
-- des messages privés
-- une discussion avec le serveur (administrateur)
-- une gestion multi-clients simultanés
+* des messages publics
+* des messages privés
+* une discussion avec le serveur (administrateur)
+* une gestion multi-clients simultanés
 
 ---
 
 ## Fonctionnalités
 
-- Chat public avec diffusion à tous les clients connectés
-- Messages privés entre utilisateurs
-- Conversation privée avec le serveur
-- Interface graphique réalisée avec Swing
-- Gestion multi-threads
-- Liste dynamique des utilisateurs connectés
-- Fenêtres dédiées pour les conversations privées
+* Chat public avec diffusion à tous les clients connectés
+* Messages privés entre utilisateurs
+* Conversation privée avec le serveur
+* Interface graphique réalisée avec Swing
+* Gestion multi-threads
+* Liste dynamique des utilisateurs connectés
+* Fenêtres dédiées pour les conversations privées
 
 ---
 
@@ -46,15 +57,18 @@ Elle permet à plusieurs clients de communiquer via un serveur central avec :
  │ CLIENT 1│     │ CLIENT 2│     │ CLIENT 3│
  │  Alice  │     │   Bob   │     │ Charlie │
  └─────────┘     └─────────┘     └─────────┘
+```
+
 ---
+
 ## Installation
 
 ### Prérequis
 
 Avant de lancer le projet, assurez-vous d’avoir installé :
 
-- **Java JDK 17 ou supérieur**  
-- **Git** (optionnel)
+* **Java JDK 17 ou supérieur**
+* **Git** (optionnel)
 
 ---
 
@@ -62,67 +76,93 @@ Avant de lancer le projet, assurez-vous d’avoir installé :
 
 Pour récupérer le projet depuis GitHub :
 
-1. Ouvrir un terminal  
+1. Ouvrir un terminal
 2. Exécuter les commandes suivantes :
 
 ```bash
 git clone https://github.com/diams45588/chat-pro.git
 cd chat-pro
-Compiler le projet
+```
+
+---
+
+### Compiler le projet
 
 Dans le dossier du projet, créer le dossier de sortie et compiler les fichiers Java :
 
+```bash
 mkdir -p out
 javac -encoding UTF-8 -d out src/common/*.java src/server/*.java src/client/*.java
-Lancer l’application
-Démarrer le serveur
+```
+
+---
+
+### Lancer l’application
+
+#### Démarrer le serveur
+
+```bash
 java -cp out src.server.ServerGUI
-Démarrer un client
+```
+
+#### Démarrer un client
+
+```bash
 java -cp out src.client.ClientGUI
-Guide d’utilisation
-Côté serveur
+```
 
-Lancer ServerGUI
+---
 
-Cliquer sur DÉMARRER
+## Guide d’utilisation
 
-Visualiser les connexions dans la liste
+### Côté serveur
+
+1. Lancer **ServerGUI**
+2. Cliquer sur **DÉMARRER**
+3. Visualiser les connexions dans la liste
 
 Pour envoyer un message :
 
-Public : choisir PUBLIC
-
-Privé : sélectionner un client
+* Public : choisir **PUBLIC**
+* Privé : sélectionner un client
 
 Double-cliquer sur un client pour ouvrir une conversation privée.
 
-Côté client
+---
 
-Lancer ClientGUI
+### Côté client
 
-Entrer un pseudo
-
-Cliquer sur Connexion
+1. Lancer **ClientGUI**
+2. Entrer un **pseudo**
+3. Cliquer sur **Connexion**
 
 Fonctionnement :
 
-Message public : écrire dans le champ principal
+* Message public : écrire dans le champ principal
+* Message privé : double-cliquer sur un utilisateur
+* Chat avec le serveur : double-cliquer sur le nom serveur
 
-Message privé : double-cliquer sur un utilisateur
+---
 
-Chat avec le serveur : bouton dédié
+## Protocole de communication
 
-Protocole de communication
-Types de messages
-Type	Description
-MSG_LOGIN	Connexion
-MSG_LOGOUT	Déconnexion
-MSG_PUBLIC	Message public
-MSG_PRIVATE	Message privé
-MSG_SERVER	Message pour serveur
-MSG_SERVER_PRIVATE	Réponse serveur
-MSG_LIST_USERS	Liste utilisateurs
-Structure d’un message
+### Types de messages
+
+| Type               | Description          |
+| ------------------ | -------------------- |
+| MSG_LOGIN          | Connexion            |
+| MSG_LOGOUT         | Déconnexion          |
+| MSG_PUBLIC         | Message public       |
+| MSG_PRIVATE        | Message privé        |
+| MSG_SERVER         | Message pour serveur |
+| MSG_SERVER_PRIVATE | Réponse serveur      |
+| MSG_LIST_USERS     | Liste utilisateurs   |
+
+---
+
+## Structure d’un message
+
+```java
 class Message implements Serializable {
     String type;
     String sender;
@@ -130,19 +170,23 @@ class Message implements Serializable {
     String content;
     long timestamp;
 }
-Technologies utilisées
+```
 
-Java
+---
 
-Sockets TCP
+## Technologies utilisées
 
-Swing
+* Java
+* Sockets TCP
+* Swing
+* Multi-threading
+* Sérialisation d’objets
 
-Multi-threading
+---
 
-Sérialisation d’objets
+## Structure du projet
 
-Structure du projet
+```
 src/
 ├── common/
 │   ├── Constants.java
@@ -156,12 +200,14 @@ src/
     ├── ChatClient.java
     ├── ClientGUI.java
     └── PrivateChatHandler.java
-Améliorations possibles
+```
 
-Authentification des utilisateurs
+---
 
-Historique des messages
+## Améliorations possibles
 
-Version web
+* Version web
+* Partage de fichiers
 
-Partage de fichiers
+---
+
