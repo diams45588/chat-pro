@@ -47,79 +47,82 @@ Elle permet à plusieurs clients de communiquer via un serveur central avec :
  │  Alice  │     │   Bob   │     │ Charlie │
  └─────────┘     └─────────┘     └─────────┘
 ---
-
 ## Installation
 
 ### Prérequis
 
-- Java JDK 17 ou supérieur
-- Git 
+Avant de lancer le projet, assurez-vous d’avoir installé :
+
+- **Java JDK 17 ou supérieur**  
+- **Git** (optionnel)
+
+---
 
 ### Cloner le projet
 
+Pour récupérer le projet depuis GitHub :
+
+1. Ouvrir un terminal  
+2. Exécuter les commandes suivantes :
+
 ```bash
-- git clone https://github.com/diams45588/chat-pro.git
-- cd chat-pro
-- Compiler le projet
-- mkdir -p out
-- javac -encoding UTF-8 -d out src/common/*.java src/server/*.java src/client/*.java
-- Lancer l’application
--Démarrer le serveur
-- java -cp out src.server.ServerGUI
+git clone https://github.com/diams45588/chat-pro.git
+cd chat-pro
+Compiler le projet
+
+Dans le dossier du projet, créer le dossier de sortie et compiler les fichiers Java :
+
+mkdir -p out
+javac -encoding UTF-8 -d out src/common/*.java src/server/*.java src/client/*.java
+Lancer l’application
+Démarrer le serveur
+java -cp out src.server.ServerGUI
 Démarrer un client
-- java -cp out src.client.ClientGUI
-
-
+java -cp out src.client.ClientGUI
 Guide d’utilisation
+Côté serveur
 
-### Côté serveur
+Lancer ServerGUI
 
-1. Lancer **ServerGUI**
-2. Cliquer sur **DÉMARRER**
-3. Visualiser les connexions dans la liste
+Cliquer sur DÉMARRER
+
+Visualiser les connexions dans la liste
 
 Pour envoyer un message :
 
-- Public : choisir **PUBLIC**
-- Privé : sélectionner un client
+Public : choisir PUBLIC
 
-Double-cliquer sur un client pour ouvrir un chat privé.
+Privé : sélectionner un client
 
----
+Double-cliquer sur un client pour ouvrir une conversation privée.
 
-### Côté client
+Côté client
 
-1. Lancer **ClientGUI**
-2. Entrer un pseudo
-3. Cliquer sur **Connexion**
+Lancer ClientGUI
+
+Entrer un pseudo
+
+Cliquer sur Connexion
 
 Fonctionnement :
 
-- Message public : écrire dans le champ principal
-- Message privé : double-cliquer sur un utilisateur
-- Chat avec le serveur : bouton dédié
+Message public : écrire dans le champ principal
 
----
+Message privé : double-cliquer sur un utilisateur
 
-## Protocole de communication
+Chat avec le serveur : bouton dédié
 
-### Types de messages
-
-| Type | Description |
-|------|------------|
-| MSG_LOGIN | Connexion |
-| MSG_LOGOUT | Déconnexion |
-| MSG_PUBLIC | Message public |
-| MSG_PRIVATE | Message privé |
-| MSG_SERVER | Message pour serveur |
-| MSG_SERVER_PRIVATE | Réponse serveur |
-| MSG_LIST_USERS | Liste utilisateurs |
-
----
-
-## Structure d’un message
-
-```java
+Protocole de communication
+Types de messages
+Type	Description
+MSG_LOGIN	Connexion
+MSG_LOGOUT	Déconnexion
+MSG_PUBLIC	Message public
+MSG_PRIVATE	Message privé
+MSG_SERVER	Message pour serveur
+MSG_SERVER_PRIVATE	Réponse serveur
+MSG_LIST_USERS	Liste utilisateurs
+Structure d’un message
 class Message implements Serializable {
     String type;
     String sender;
